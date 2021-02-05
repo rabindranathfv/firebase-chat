@@ -1,0 +1,21 @@
+[debug] [2021-02-04T23:38:29.928Z] ----------------------------------------------------------------------
+[debug] [2021-02-04T23:38:29.931Z] Command:       /Users/rabindranathferreira/.nvm/versions/node/v10.19.0/bin/node /Users/rabindranathferreira/.nvm/versions/node/v10.19.0/bin/firebase init
+[debug] [2021-02-04T23:38:29.931Z] CLI Version:   9.3.0
+[debug] [2021-02-04T23:38:29.931Z] Platform:      darwin
+[debug] [2021-02-04T23:38:29.931Z] Node Version:  v10.19.0
+[debug] [2021-02-04T23:38:29.933Z] Time:          Thu Feb 04 2021 20:38:29 GMT-0300 (GMT-03:00)
+[debug] [2021-02-04T23:38:29.934Z] ----------------------------------------------------------------------
+[debug] [2021-02-04T23:38:29.934Z] 
+[debug] [2021-02-04T23:38:29.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-02-04T23:38:29.949Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/rabindranathferreira/Documents/firebase-chat
+
