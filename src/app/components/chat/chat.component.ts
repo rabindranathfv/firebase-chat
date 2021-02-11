@@ -10,17 +10,19 @@ export class ChatComponent {
 
   message = '';
 
-  constructor( private chatService: ChatService) {
-    this.chatService.loadMessages().subscribe((messages: any[]) => {
-      console.log(messages);
-    });
+  constructor( public chatService: ChatService) {
+    this.chatService.loadMessages().subscribe();
    }
 
   /**
    * sendMessage
    */
   public sendMessage( ) {
-    console.log(`el mensage ${this.message}`);
+    if ( this.message.length === 0 ) { return; }
+    this.chatService.sendMessage( this.message )
+        .then( () => this.message = ''   )
+        .catch( (err) => console.log(err));
+
   }
 
 
