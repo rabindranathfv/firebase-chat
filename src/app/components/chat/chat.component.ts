@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { ChatService } from 'src/app/providers/chat.service';
 
 @Component({
@@ -6,22 +6,21 @@ import { ChatService } from 'src/app/providers/chat.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, AfterViewChecked {
 
   message = '';
   autoScroll: any;
+  @ViewChild('scrollMe', { static: false}) private myScrollContainer: ElementRef;
 
   constructor( public chatService: ChatService) {
     this.chatService.loadMessages().subscribe(() => {
-      // setTimeout(() => {
-      //   this.autoScroll.scrollTop = this.autoScroll.scrollHeight;
-      // }, 50);
+      this.scrollToBottom();
     });
    }
 
    ngOnInit() {
-    // this.autoScroll = document.getElementById('app-mensajes');
-   }
+    this.scrollToBottom();
+  }
 
   /**
    * sendMessage
@@ -31,9 +30,18 @@ export class ChatComponent implements OnInit {
     this.chatService.sendMessage( this.message )
         .then( () => this.message = ''   )
         .catch( (err) => console.log(err));
-
   }
 
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
 
+  scrollToBottom(): void {
+      try {
+          this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+      } catch (err) {
+        console.error(err);
+       }
+  }
 
 }
