@@ -13,14 +13,14 @@ export class ChatComponent implements OnInit {
 
   constructor( public chatService: ChatService) {
     this.chatService.loadMessages().subscribe(() => {
-      setTimeout(() => {
-        this.autoScroll.scrollTop = this.autoScroll.scrollHeight;
-      }, 50);
+      // setTimeout(() => {
+      //   this.autoScroll.scrollTop = this.autoScroll.scrollHeight;
+      // }, 50);
     });
    }
 
    ngOnInit() {
-    this.autoScroll = document.getElementById('app-mensajes');
+    // this.autoScroll = document.getElementById('app-mensajes');
    }
 
   /**

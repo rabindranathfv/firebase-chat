@@ -1,7 +1,7 @@
 <h1>Chat</h1>
 <hr>
 
-<div class="app-mensajes" id="app-mensajes">
+<div class="app-mensajes" id="app-mensajes" #scrollMe [scrollTop]="scrollMe.scrollHeight">
 
     <div class="text-right" *ngFor="let chat of chatService.chats">
         <span class="badge badge-primary"> Rabindranath
@@ -9,11 +9,11 @@
         <p>{{ chat.message }}</p>
     </div>
 
-    <div>
+    <!-- <div>
         <span class="badge badge-success"> Jose
         </span>
         <p>this is a chat message</p>
-    </div>
+    </div> -->
 
 </div>
 
