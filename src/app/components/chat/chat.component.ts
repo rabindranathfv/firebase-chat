@@ -10,7 +10,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   message = '';
   autoScroll: any;
-  @ViewChild('scrollMe', { static: false}) private myScrollContainer: ElementRef;
+  @ViewChild('scrollDown', { static: false}) private scrollContainer: ElementRef;
 
   constructor( public chatService: ChatService) {
     this.chatService.loadMessages().subscribe(() => {
@@ -38,10 +38,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   scrollToBottom(): void {
       try {
-          this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-      } catch (err) {
-        console.error(err);
-       }
+          this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+      } catch (err) { }
   }
 
 }
