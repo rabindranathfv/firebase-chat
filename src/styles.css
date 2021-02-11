@@ -10,15 +10,15 @@
 .chat-window {
     padding: 10px;
     width: 300px;
-    height: 400px;
+    height: 80vh;
     overflow: hidden;
-    border: 1px solid #4080FF;
+    border: 4px solid #4080FF;
     border-radius: 20px;
 }
 
 .app-mensajes {
     overflow-y: scroll;
-    height: 260px;
+    height: 62vh;
     /*background:gray;*/
     padding: 5px;
 }
