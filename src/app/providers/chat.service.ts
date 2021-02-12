@@ -12,6 +12,7 @@ import { User } from '../interface/user.interface';
   providedIn: 'root'
 })
 export class ChatService {
+
   private itemsCollection: AngularFirestoreCollection<any>;
   public chats: Message[] = [];
   user: User;
