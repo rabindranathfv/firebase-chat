@@ -27,8 +27,13 @@ export class ChatService {
    }
 
   login( provider: string ) {
-    this.authFB.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    if ( provider === 'google') {
+      this.authFB.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    } else {
+      this.authFB.auth.signInWithPopup(new auth.TwitterAuthProvider());
+    }
   }
+
   logout() {
     this.user = { uid: null, displayName: null, email: null, emailVerified: null, photoURL: null};
     this.authFB.auth.signOut();
