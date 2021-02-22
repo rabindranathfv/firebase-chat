@@ -7,6 +7,7 @@ import { auth } from 'firebase/app';
 
 import { Message } from '../interface/message.interface';
 import { User } from '../interface/user.interface';
+import { NonNullAssert } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,7 @@ export class ChatService {
     this.authFB.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   logout() {
+    this.user = { uid: null, displayName: null, email: null, emailVerified: null, photoURL: null};
     this.authFB.auth.signOut();
   }
 
