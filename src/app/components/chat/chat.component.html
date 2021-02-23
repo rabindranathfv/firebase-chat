@@ -3,17 +3,12 @@
 
 <div class="app-mensajes" id="app-mensajes" #scrollDown>
 
-    <div class="text-right" *ngFor="let chat of chatService.chats">
-        <span class="badge badge-primary"> Rabindranath
+    <div *ngFor="let chat of chatService.chats" [ngClass]="{'text-right': chat.userUid == this.chatService.user?.uid }">
+        <span [ngClass]="{'badge-primary': chat.userUid == this.chatService.user?.uid, 'badge-success' : chat.userUid != this.chatService.user?.uid }" class="badge" > 
+            {{ chat.name}}
         </span>
-        <p>{{ chat.message }}</p>
+        <p id="{{chat.userUid}}">{{ chat.message }}</p>
     </div>
-
-    <!-- <div>
-        <span class="badge badge-success"> Jose
-        </span>
-        <p>this is a chat message</p>
-    </div> -->
 
 </div>
 

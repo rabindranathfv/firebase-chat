@@ -7,7 +7,6 @@ import { auth } from 'firebase/app';
 
 import { Message } from '../interface/message.interface';
 import { User } from '../interface/user.interface';
-import { NonNullAssert } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -58,8 +57,9 @@ export class ChatService {
    */
   public sendMessage( msg: string) {
     const message: Message = {
-      name: 'userDemo',
+      name: this.user.displayName,
       message: msg,
+      userUid: this.user.uid,
       date: new Date().getTime()
     };
     return this.itemsCollection.add( message );
