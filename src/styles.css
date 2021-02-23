@@ -52,3 +52,12 @@
 .fadeIn {
     animation-name: fadeIn;
 }
+
+.loading{
+  color: white;
+  padding-top: 50px;
+}
+
+.invisible-div {
+    display: none;
+}
